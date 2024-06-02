@@ -64,8 +64,8 @@ def infer_one(wav_path, model):
 
     else:
         pass
-    print(inp_mel.transpose(1,2).shape)
-    pred = model(inp_wav=inp_mel.transpose(1, 2).to(torch.float32))
+
+    pred = model(inp_wav=inp_mel.transpose(1, 2))
     pred_cls = pred.argmax(-1).data.cpu().numpy()
     if len(pred_cls) == 1:
         pred_name = label_mapping[pred_cls[0]]

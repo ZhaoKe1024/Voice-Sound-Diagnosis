@@ -54,5 +54,5 @@ class CLSModel(nn.Module):
 
 
 if __name__ == '__main__':
-    clm = CLSModel()
+    clm = cl_model()
     clm(torch.rand(16, 8, 26))

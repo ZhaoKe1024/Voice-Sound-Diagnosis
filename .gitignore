@@ -3,3 +3,4 @@
 *.pyc
 *.pt
 /.ipynb_checkpoints/
+*.zip
