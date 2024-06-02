@@ -14,8 +14,8 @@ from tools import segment_cough, vad
 label_mapping = {
     0: 'Healthy(健康样本)',
     1: 'Hyperkinetic Dysphonia(声带运动过度或不协调)',
-    2: 'Reflux Laryngitis(反流性喉炎)',
-    3: 'symptomic()',
+    2: 'Hypokinetic Dysphonia()',
+    3: 'Reflux Laryngitis()',
 }
 LENGTH = 3872
 sr = 8000

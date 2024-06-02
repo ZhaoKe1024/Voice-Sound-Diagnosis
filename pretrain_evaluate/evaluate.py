@@ -56,9 +56,9 @@ def heatmap_eval():
     savepath = "./result_hm.png"
     max_arg = list(ypred_eval)
     conf_mat = metrics.confusion_matrix(max_arg, ytrue_eval)
-    # conf_mat = conf_mat / conf_mat.sum(axis=1)
+    conf_mat = conf_mat / conf_mat.sum(axis=1)
     df_cm = pd.DataFrame(conf_mat, index=["Healthy", "Hyperkinetic\nDysphonia", "Hyperkinetic\nDysphonia", "Reflux\nLaryngitis"], columns=["Healthy", "Hyperkinetic\nDysphonia", "Hyperkinetic\nDysphonia", "Reflux\nLaryngitis"])
-    heatmap = sns.heatmap(df_cm, annot=True, fmt='d', cmap='YlGnBu')  # , cbar_kws={'format': '%.2f%'})
+    heatmap = sns.heatmap(df_cm, annot=True, fmt='.2f', cmap='YlGnBu')  # , cbar_kws={'format': '%.2f%'})
     heatmap.yaxis.set_ticklabels(heatmap.yaxis.get_ticklabels(), rotation=0, ha='right')
     heatmap.xaxis.set_ticklabels(heatmap.xaxis.get_ticklabels(), rotation=0, ha='right')
     plt.xlabel("Predict Label")
